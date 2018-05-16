@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="static/css/belieff.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="static/css/animate.css" media="screen,projection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Belieff.mx SMS Surveys</title>
+  <link rel="icon" type="image/x-icon" href="static/img/favicon.ico"/>
+</head>
+
+<body>
+  <div class="navbar-fixed">
+    <nav class="white wow slideInDown">
+      <div class="nav-wrapper container">
+        <img src="static/img/pollstrLogoSM.png" class="brand-logo  nav-logo">
+        <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons p-blue-text">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="menu.html" class="p-green-text">Menú principal</a></li>
+        </ul>
+        <ul class="side-nav" id="mobile-nav">
+          <li><a href="menu.html" class="p-green-text">Menú principal</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <div class="wow slideInDown" style="height:200px; background-color: #00A99D;">
+    </div>
+    <div class="container" style="margin-top:-100px">
+      <div class="row">
+        <div class="col s12 m6">
+          <a href="new.html">
+            <div class="card-panel center hoverable wow slideInUp" data-mh="same-height">
+              <i class="large material-icons b-red-text">note_add</i>
+              <h4 class="b-red-text">Nueva encuesta</h4>
+              <p class=" grey-text text-darken-2">Genere una nueva encuesta para enviar por SMS.</p>
+            </div>
+          </a>
+        </div>
+        <div class="col s12 m6">
+          <a href="send.html">
+            <div class="card-panel center hoverable wow slideInUp" data-mh="same-height">
+              <i class="large material-icons b-orange-text">textsms</i>
+              <h4 class="b-orange-text">Enviar encuestas</h4>
+              <p class="grey-text text-darken-2">Envíe encuestas a nuevos números de celular.</p>
+            </div>
+          </a>
+        </div>
+        <div class="col s12 m6">
+          <a href="answers.html">
+            <div class="card-panel center hoverable wow slideInUp" data-mh="same-height">
+              <i class="large material-icons b-blue-text">dashboard</i>
+              <h4 class="b-blue-text">Visualizar resultados</h4>
+              <p class="grey-text text-darken-2">Obtenga las respuestas a sus encuestas y analice los resultados.</p>
+            </div>
+          </a>
+        </div>
+        <div class="col s12 m6">
+          <a href="billing.html">
+            <div class="card-panel center hoverable wow slideInUp" data-mh="same-height">
+              <i class="large material-icons p-blue-text">attach_money</i>
+              <h4 class="p-blue-text">Estado de cuenta</h4>
+              <p class="grey-text text-darken-2">Revise el costo actual del envío y análisis de sus encuestas.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="page-footer pollstr-footer wow slideInUp">
+    <div class="container" style="min-height:200px;">
+      <div class="row" style="display:none;">
+        <div class="col l6 s12">
+          <h5 class="white-text">Footer Content</h5>
+          <p class="grey-text text-lighten-4">Column footer content.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        ©2018 Servicios Emberi S. de R.L. de C.V.
+        <a class="grey-text text-lighten-4 right modal-trigger" href="#privacy">Privacy Statement</a>
+      </div>
+    </div>
+  </footer>
+
+  <!--Modals-->
+  <div id="privacy" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <h4>Privacy Statement for pollstr.io</h4>
+      <p>A bunch of text</p>
+    </div>
+    <div class="modal-footer">
+      <a href="http://www.staggeringbeauty.com/" class="modal-action modal-close waves-effect waves-green btn-flat grey-text">I do not agree, take me out of here and to a random webpage</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat red-text">Agree</a>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
+  <script type="text/javascript" src="static/js/materialize.min.js"></script>
+  <script type="text/javascript" src="static/js/matchHeight.js"></script>
+  <script type="text/javascript" src="static/js/wow.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.parallax').parallax();
+      $(".button-collapse").sideNav();
+      $('.modal').modal();
+      $('ul.tabs').tabs();
+    });
+    new WOW().init();
+  </script>
+
+</body>
+
+</html>

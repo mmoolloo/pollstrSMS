@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="static/css/belieff.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="static/css/animate.css" media="screen,projection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <title>Test</title>
+  <link rel="icon" type="image/x-icon" href="static/img/favicon.ico" />
+</head>
+
+<body>
+  <nav class="blue">
+
+  </nav>
+  <main>
+    <div class="row">
+      <div class="col s6">
+        <div class="card-panel" id="container1" data-mh="g1">
+          <button class="btn" onclick="add1();"><i class="material-icons">add</i></button>
+        </div>
+      </div>
+      <div class="col s6">
+        <div class="card-panel" id="container2" data-mh="g1">
+          <button class="btn" onclick="add2();"><i class="material-icons">add</i></button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+
+  </footer>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   <script type="text/javascript" src="static/js/materialize.min.js"></script>
+  <script src="static/js/matchHeight.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    var counter1 = 1,
+      counter2 = 1;
+    function add1(){
+      var container = document.getElementById('container1'),
+        p = document.createElement('p'),
+        text = document.createTextNode('line ' + counter1);
+        container.appendChild(p);
+        p.appendChild(text);
+        p.classList.add('grey-text', 'text-darken-2', 'flow-text')
+        var btn = document.createElement('button');
+        btn.classList.add('btn','red','waves','right');
+        p.appendChild(btn);
+        btn.onclick = "remove1(counter1)";
+        counter1 = counter1 + 1;
+        $.fn.matchHeight._update();
+    }
+    function add2(){
+      var container = document.getElementById('container2'),
+        p = document.createElement('p'),
+        text = document.createTextNode('line ' + counter2);
+        container.appendChild(p);
+        p.appendChild(text);
+        p.classList.add('grey-text', 'text-darken-2', 'flow-text')
+        counter2 = counter2 + 1;
+        $.fn.matchHeight._update();
+    }
+    function remove1(id){
+      console.log(id);
+    };
+  </script>
+</body>
+
+</html>
