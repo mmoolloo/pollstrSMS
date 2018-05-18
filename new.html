@@ -16,7 +16,7 @@
   <div class="navbar-fixed">
     <nav class="white wow slideInDown">
       <div class="nav-wrapper container">
-        <img src="static/img/pollstrLogoSM.png" class="brand-logo  nav-logo">
+        <!--img src="static/img/pollstrLogoSM.png" class="brand-logo  nav-logo"-->
         <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons p-blue-text">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="menu.html" class="p-green-text">Menú principal</a></li>
@@ -29,13 +29,13 @@
   </div>
 
   <main>
-    <div class="wow slideInDown" style="height:200px; background-color: #00A99D;">
+    <div class="wow slideInDown" style="height:200px; background-image: url(http://i67.tinypic.com/11rejap.jpg);">
     </div>
     <div class="container" style="margin-top:-93px">
       <div class="center">
-        <h4 class="white-text">Encuestas Activas</h4>
+        <h4 class="white-text">Campañas</h4>
       </div>
-      <a class="btn-floating btn-large waves-effect waves-light b-orange hoverable modal-trigger tooltipped" data-position="bottom" data-delay="50" data-tooltip="Nueva encuesta" href="#addSurvey"><i class="material-icons">add</i></a>
+      <a class="btn-floating btn-large waves-effect waves-light tm-green hoverable modal-trigger tooltipped" data-position="bottom" data-delay="50" data-tooltip="Nueva encuesta" href="#addSurvey"><i class="material-icons">add</i></a>
     </div>
 
     <!--Add Survey Modal-->
@@ -43,12 +43,12 @@
       <div class="modal-content">
         <div class="input-field">
           <input id="survey_name" type="text">
-          <label for="survey_name">Nombre de la encuesta</label>
+          <label for="survey_name">Nombre de la campaña</label>
         </div>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat b-red-text">Cancelar</a>
-        <a class="modal-action modal-close waves-effect waves-red btn-flat p-blue-text" onclick="createSurvey()">Crear encuesta</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat tm-green-text">Cancelar</a>
+        <a class="modal-action modal-close waves-effect waves-red btn-flat p-blue-text" onclick="createSurvey()">Crear campaña</a>
       </div>
     </div>
     <!--End add Survey Modal-->
@@ -57,19 +57,19 @@
       <div class="modal-content">
         <div class="input-field">
           <input id="question-text" type="text">
-          <label for="question">Escriba una pregunta abierta</label>
+          <label for="question">Escriba el texto del mensaje</label>
         </div>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat b-red-text">Cancelar</a>
-        <a class="modal-action modal-close waves-effect waves-red btn-flat p-blue-text" onclick="createQuestion(this.dataset.survey)" id="add-question">Crear pregunta</a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat tm-green-text">Cancelar</a>
+        <a class="modal-action modal-close waves-effect waves-red btn-flat p-blue-text" onclick="createQuestion(this.dataset.survey)" id="add-question">crear mensaje</a>
       </div>
     </div>
     <!--End add Question Modal-->
 
     <div class="container">
       <div id="survey_list">
-        <h4 class="center grey-text" id="empty_message">No hay encuestas activas</h4>
+        <h4 class="center grey-text text-darken-1" id="empty_message">No hay campañas activas</h4>
       </div>
     </div>
   </main>
@@ -94,7 +94,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-        ©2018 Pollstrio S.A.P.I. de C.V.
+        <!--©2018 Pollstrio S.A.P.I. de C.V.-->
         <a class="grey-text text-lighten-4 right modal-trigger" href="#privacy">Privacy Statement</a>
       </div>
     </div>
@@ -169,14 +169,14 @@
       var addNewQuestion = document.createElement('li');
       addNewQuestion.classList.add("collection-item", "grey-text");
       addNewQuestion.setAttribute('data-survey', surveyNumber)
-      var placeholder = document.createTextNode('Agregar pregunta');
+      var placeholder = document.createTextNode('Agregar mensaje');
       var anchor = document.createElement("a");
       anchor.setAttribute('data-survey', surveyNumber);
       anchor.appendChild(placeholder);
       anchor.setAttribute('onclick', 'preAddQuestion(' + surveyNumber + ');');
       addNewQuestion.appendChild(anchor);
       anchor.href = "#addQuestion";
-      anchor.classList.add("modal-trigger", "b-orange-text", "btn", "white", "hoverable");
+      anchor.classList.add("modal-trigger", "tm-green-text", "btn", "white", "hoverable");
       collection.appendChild(addNewQuestion);
 
       document.getElementById('survey_name').value = '';
@@ -218,14 +218,14 @@
       var addNewQuestion = document.createElement('li');
       addNewQuestion.classList.add("collection-item", "grey-text");
       addNewQuestion.setAttribute('data-survey', surveyNumber)
-      var placeholder = document.createTextNode('Agregar pregunta');
+      var placeholder = document.createTextNode('Agregar mensaje');
       var anchor = document.createElement("a");
       anchor.setAttribute('data-survey', surveyNumber);
       anchor.appendChild(placeholder);
       anchor.setAttribute('onclick', 'preAddQuestion(' + sNumber + ');');
       addNewQuestion.appendChild(anchor);
       anchor.href = "#addQuestion";
-      anchor.classList.add("modal-trigger", "b-orange-text", "btn", "white", "hoverable");
+      anchor.classList.add("modal-trigger", "tm-green-text", "btn", "white", "hoverable");
       collection.appendChild(addNewQuestion);
 
       document.getElementById('question-text').value = '';

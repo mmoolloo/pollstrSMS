@@ -16,7 +16,7 @@
   <div class="navbar-fixed">
     <nav class="white wow slideInDown">
       <div class="nav-wrapper container">
-        <img src="static/img/pollstrLogoSM.png" class="brand-logo  nav-logo">
+        <!--img src="static/img/pollstrLogoSM.png" class="brand-logo  nav-logo"-->
         <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons p-blue-text">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="menu.html" class="p-green-text">Menú principal</a></li>
@@ -29,13 +29,13 @@
   </div>
 
   <main>
-    <div class="" style="height:200px; background-color: #00A99D;">
+    <div class="" style="height:200px; background-image: url(http://i67.tinypic.com/11rejap.jpg);">
     </div>
     <div class="container wow slideInUp" style="margin-top:-100px">
       <div class="card-panel">
         <div class="row">
           <div class="col s12 center">
-            <h3 class="b-orange-text">Consumo de servicio</h3>
+            <h3 class="tm-green-text">Consumo de servicio</h3>
           </div>
           <div class="col s12 m8">
             <p class="p-blue-text flow-text">Seleccione el período para visualizar su volumen y estadísticas de consumo, oprima el botón inferior para ver los resultados del mes seleccionado:</p>
@@ -49,7 +49,7 @@
             <label>Mes</label>
           </div>
           <div class="col s12">
-            <button type="button" class="btn waves-effect waves-light right b-orange" name="button" onclick="viewBilling();">
+            <button type="button" class="btn waves-effect waves-light right tm-green" name="button" onclick="viewBilling();">
               <i class="material-icons">remove_red_eye</i>
             </button>
           </div>
@@ -79,7 +79,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-        ©2018 Pollstrio S.A.P.I. de C.V.
+        <!--©2018 Pollstrio S.A.P.I. de C.V.-->
         <a class="grey-text text-lighten-4 right modal-trigger" href="#privacy">Privacy Statement</a>
       </div>
     </div>
@@ -101,7 +101,7 @@
   <div id="confirm" class="modal">
     <div class="modal-content center">
       <p class="flow-text">
-        La encuesta <span class="b-orange-text" id="this-survey"></span> se enviará a <span class="b-orange-text" id="phone-numbers"></span> números de teléfono. ¿Está seguro?
+        La encuesta <span class="tm-green-text" id="this-survey"></span> se enviará a <span class="tm-green-text" id="phone-numbers"></span> números de teléfono. ¿Está seguro?
       </p>
     </div>
     <div class="modal-footer">
@@ -141,7 +141,7 @@
       container.classList.add('card-panel', 'center');
       container.appendChild(title);
       title.appendChild(titleText);
-      title.classList.add('b-orange-text');
+      title.classList.add('tm-green-text');
       container.appendChild(canvas);
       if (month == 'Febrero'){
         billingFebrero();

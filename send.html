@@ -4,6 +4,7 @@
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="static/css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="static/css/nouislider.min.css" media="screen,projection" />
   <link type="text/css" rel="stylesheet" href="static/css/pollstr.css" media="screen,projection" />
   <link type="text/css" rel="stylesheet" href="static/css/animate.css" media="screen,projection" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,7 +17,7 @@
   <div class="navbar-fixed">
     <nav class="white wow slideInDown">
       <div class="nav-wrapper container">
-        <img src="static/img/pollstrLogoSM.png" class="brand-logo  nav-logo">
+        <!--img src="static/img/pollstrLogoSM.png" class="brand-logo  nav-logo"-->
         <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons p-blue-text">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="menu.html" class="p-green-text">Menú principal</a></li>
@@ -29,35 +30,88 @@
   </div>
 
   <main>
-    <div class="" style="height:200px; background-color: #00A99D;">
+    <div class="" style="height:200px; background-image: url(http://i67.tinypic.com/11rejap.jpg);">
     </div>
     <div class="container wow slideInUp" style="margin-top:-100px">
       <div class="card-panel">
         <div class="row">
           <div class="col s12 center">
-            <h3 class="b-orange-text">Envío de encuestas</h3>
+            <h3 class="tm-green-text">Envío de mensajes</h3>
           </div>
           <div class="col s12">
-            <p class="p-blue-text flow-text">Seleccione el nombre de la encuesta que desea enviar:</p>
+            <p class="p-blue-text flow-text">Seleccione el nombre de la campaña que desea enviar:</p>
           </div>
           <div class="input-field col s12">
             <select id="available-surveys">
-              <option value="Salida de empleados">Salida de empleados</option>
-              <option value="Calidad de ambiente laboral">Calidad de ambiente laboral</option>
+              <option value="Ofertas de fin de temporada">Ofertas de fin de temporada</option>
+              <option value="Nuevo lanzamiento de producto">Nuevo lanzamiento de producto</option>
             </select>
-            <label>Encuestas disponibles</label>
-          </div>
-          <div class="col s12">
-            <p class="grey-text text-darken-2 flow-text">Escriba la lista de números telefónicos a los que quiera enviar la encuesta. Los números deben estar en líneas separadas (presione la tecla Enter después de cada número). También puede copiar y pegar una columna de Excel que solamente contenga números telefónicos.</p>
+            <label>Campañas disponibles</label>
           </div>
           <form class="col s12">
             <div class="row">
-              <div class="input-field col s12 m6">
-                <i class="material-icons prefix p-green-text">phone</i>
-                <textarea id="phones" class="materialize-textarea"></textarea>
-                <label for="phones">Números de teléfono</label>
+              <div class="col s12">
+                <p class="p-blue-text flow-text">Seleccione su audiencia:</p>
               </div>
-              <div class="col s12 m6 center">
+              <div class="col s12">
+                <p class="grey-text text-darken-2 flow-text">Seleccione el género de su audiencia objetivo.</p>
+              </div>
+              <div class="col s12 m6">
+                <p class="center">
+                  <input type="checkbox" id="gender1" class="checkbox-tm" value="mujeres"/>
+                  <label for="gender1">Mujeres</label>
+                </p>
+              </div>
+              <div class="col s12 m6">
+                <p class="center">
+                  <input type="checkbox" id="gender2" class="checkbox-tm" value="hombres"/>
+                  <label for="gender2">Hombres</label>
+                </p>
+              </div>
+              <div class="col s12">
+                <p class="grey-text text-darken-2 flow-text">Seleccione el rango de edades.</p>
+              </div>
+              <!--Slider edades-->
+              <div class="col s10 offset-s1" id="age-slider" style="margin-top:20px; margin-bottom:40px;"></div>
+              <!--Slider edades-->
+
+              <div class="col s12">
+                <p class="grey-text text-darken-2 flow-text">Seleccione los niveles socioeconómicos que abarca su audiencia objetivo.</p>
+              </div>
+              <div class="col s6 m3">
+                <p class="center">
+                  <input type="checkbox" id="nse1" class="checkbox-tm" value="A++ / A+"/>
+                  <label for="nse1">A++ / A+</label>
+                </p>
+              </div>
+              <div class="col s6 m3">
+                <p class="center">
+                  <input type="checkbox" id="nse2" class="checkbox-tm" value="A / A-"/>
+                  <label for="nse2">A / A-</label>
+                </p>
+              </div>
+              <div class="col s6 m3">
+                <p class="center">
+                  <input type="checkbox" id="nse3" class="checkbox-tm" value="B+ / B / B-"/>
+                  <label for="nse3">B+ / B / B-</label>
+                </p>
+              </div>
+              <div class="col s6 m3">
+                <p class="center">
+                  <input type="checkbox" id="nse4" class="checkbox-tm" value="C+ / C / C-"/>
+                  <label for="nse4">C+ / C / C-</label>
+                </p>
+              </div>
+              <div class="col s12">
+                <p class="grey-text text-darken-2 flow-text">Escriba la lista de códigos postales objetivo separados por la tecla enter. También puede copiar y pegar una columna de excel con la lista de códigos postales.</p>
+              </div>
+              <div class="input-field col s12 m12">
+                <i class="material-icons prefix p-green-text">location_on</i>
+                <textarea id="phones" class="materialize-textarea"></textarea>
+                <label for="phones"></label>
+              </div>
+
+              <div class="col s12 m12 center" style="margin-top:100px;">
                   <!--Cambiar por botón-->
                   <a onclick="countPhones();" class="btn waves-effect waves-light p-green modal-trigger" type="submit" name="action" href="#confirm">Enviar
                     <i class="material-icons right">send</i>
@@ -90,7 +144,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-        ©2018 Pollstrio S.A.P.I. de C.V.
+        <!--©2018 Pollstrio S.A.P.I. de C.V.-->
         <a class="grey-text text-lighten-4 right modal-trigger" href="#privacy">Privacy Statement</a>
       </div>
     </div>
@@ -112,20 +166,45 @@
   <div id="confirm" class="modal">
     <div class="modal-content center">
       <p class="flow-text">
-        La encuesta <span class="b-orange-text" id="this-survey"></span> se enviará a <span class="b-orange-text" id="phone-numbers"></span> números de teléfono. ¿Está seguro?
+        La campaña <span class="tm-green-text" id="this-survey">undefined</span> se enviará a <span class="tm-green-text" id="genders">undefined</span> de <span class="tm-green-text" id="age-lower">undefined</span> a <span class="tm-green-text" id="age-upper">undefined</span> años de edad, de niveles socioeconómicos <span class="tm-green-text" id="nses">undefined</span>, en <span class="tm-green-text" id="phone-numbers">undefined</span> códigos postales. ¿Está seguro?
       </p>
     </div>
     <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat b-red-text">Cancelar</a>
+      <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat tm-green-text">Cancelar</a>
       <a class="modal-action modal-close waves-effect waves-red btn-flat p-blue-text">Enviar</a>
     </div>
   </div>
   <!--End confirmation Modal-->
 
+  <!--Gender error Modal-->
+  <div id="error-gender" class="modal">
+    <div class="modal-content center">
+      <p class="flow-text">Favor de seleccionar al menos un género</span>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat b-red-text" onclick="closeConfirm();">Regresar</a>
+    </div>
+  </div>
+  <!--Gender error Modal-->
+
+  <!--NSE error Modal-->
+  <div id="error-nse" class="modal">
+    <div class="modal-content center">
+      <p class="flow-text">Favor de seleccionar al menos un NSE</span>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat b-red-text" onclick="closeConfirm();">Regresar</a>
+    </div>
+  </div>
+  <!--NSE error Modal-->
+
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js"></script>
   <script type="text/javascript" src="static/js/materialize.min.js"></script>
+  <script type="text/javascript" src="static/js/wNumb.js"></script>
+  <script type="text/javascript" src="static/js/nouislider.min.js"></script>
+  <script type="text/javascript" src="static/js/slider.js"></script>
   <script type="text/javascript" src="static/js/wow.js"></script>
+  <script type="text/javascript" src="static/js/audienceSelect.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       $('.parallax').parallax();
@@ -135,22 +214,6 @@
       $('select').material_select();
     });
     new WOW().init();
-  </script>
-
-  <script>
-    function countPhones(){
-      var phoneList = document.getElementById('phones').value
-      var cleanPhones = phoneList.replace(/-|\s/g,"");
-      var numberOfPhones = phoneList.split("\n").length;
-      var phoneText = document.createTextNode(numberOfPhones);
-      var surveyText = document.createTextNode(document.getElementById('available-surveys').value);
-      var numberContainer = document.getElementById('phone-numbers');
-      var surveyContainer = document.getElementById('this-survey');
-      numberContainer.innerHTML = "";
-      surveyContainer.innerHTML = "";
-      numberContainer.appendChild(phoneText);
-      surveyContainer.appendChild(surveyText);
-    }
   </script>
 
 </body>

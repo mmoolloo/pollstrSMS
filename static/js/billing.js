@@ -10,14 +10,14 @@ var lineOptions = {
       display: true,
       scaleLabel: {
         display: true,
-        labelString: 'Month'
+        labelString: 'Fecha'
       }
     }],
     yAxes: [{
       display: true,
       scaleLabel: {
         display: true,
-        labelString: 'Value'
+        labelString: 'Número de mensajes'
       }
     }]
   },
@@ -30,15 +30,12 @@ var lineOptions = {
 var febLabels = [],
   marLabels = [],
   aprLabels = [],
-  febDataS = [],
-  febDataR = [],
-  febDataRD = [],
-  marDataS = [],
-  marDataR = [],
-  marDataRD = [],
-  aprDataS = [],
-  aprDataR = [],
-  aprDataRD = [],
+  febData1 = [],
+  febData2 = [],
+  marData1 = [],
+  marData2 = [],
+  aprData1 = [],
+  aprData2 = [],
   febTotal = [],
   marTotal = [],
   aprTotal = [];
@@ -58,66 +55,46 @@ for (var i = 1; i <= 30; i++) {
 
 
 for (var i = 1; i <= 28; i++) {
-    febDataS.push(Math.floor(Math.random() * 1000));
+    febData1.push(Math.floor(Math.random() * 1000));
 }
-
 for (var i = 1; i <= 28; i++) {
-    febDataRD.push(Math.floor(Math.random() * 220));
+    febData2.push(Math.floor(Math.random() * 800));
 }
+febData1.sort(function(a, b){return a - b});
+febData2.sort(function(a, b){return a - b});
 
-febDataS.sort(function(a, b){return a - b});
-febDataRD.sort(function(a, b){return a - b});
-
-for(var i = 0; i <= febDataRD.length - 1; i++) {
-  febDataR.push(febDataS[i] - febDataRD[i]);
-}
-
-for(var i = 0; i <= febDataS.length - 1; i++) {
-  febTotal.push(febDataS[i] + febDataR[i]);
-}
-
-
-
-for (var i = 1; i <= 31; i++) {
-    marDataS.push(Math.floor(Math.random() * 1000));
+for(var i = 0; i <= febData1.length - 1; i++) {
+  febTotal.push(febData1[i] + febData2[i]);
 }
 
 for (var i = 1; i <= 31; i++) {
-    marDataRD.push(Math.floor(Math.random() * 220));
+    marData1.push(Math.floor(Math.random() * 1000));
 }
-
-marDataS.sort(function(a, b){return a - b});
-marDataRD.sort(function(a, b){return a - b});
-
-for(var i = 0; i <= marDataRD.length - 1; i++) {
-  marDataR.push(marDataS[i] - marDataRD[i]);
+for (var i = 1; i <= 31; i++) {
+    marData2.push(Math.floor(Math.random() * 800));
 }
+marData1.sort(function(a, b){return a - b});
+marData2.sort(function(a, b){return a - b});
 
-for(var i = 0; i <= marDataS.length - 1; i++) {
-  marTotal.push(marDataS[i] + marDataR[i]);
-}
-
-
-for (var i = 1; i <= 30; i++) {
-    aprDataS.push(Math.floor(Math.random() * 1000));
+for(var i = 0; i <= marData1.length - 1; i++) {
+  marTotal.push(marData1[i] + marData2[i]);
 }
 
 for (var i = 1; i <= 30; i++) {
-    aprDataRD.push(Math.floor(Math.random() * 220));
+    aprData1.push(Math.floor(Math.random() * 1000));
+}
+for (var i = 1; i <= 30; i++) {
+    aprData2.push(Math.floor(Math.random() * 800));
+}
+aprData1.sort(function(a, b){return a - b});
+aprData2.sort(function(a, b){return a - b});
+
+for(var i = 0; i <= aprData1.length - 1; i++) {
+  aprTotal.push(aprData1[i] + aprData2[i]);
 }
 
-aprDataS.sort(function(a, b){return a - b});
-aprDataRD.sort(function(a, b){return a - b});
 
-for(var i = 0; i <= aprDataRD.length - 1; i++) {
-  aprDataR.push(aprDataS[i] - aprDataRD[i]);
-}
-
-for(var i = 0; i <= aprDataS.length - 1; i++) {
-  aprTotal.push(aprDataS[i] + aprDataR[i]);
-}
-
-var costPerLine = 10
+var costPerLine = 15
 
 function bStats(month){
   var statsCont = document.createElement('div');
@@ -128,7 +105,7 @@ function bStats(month){
   var interactions = document.createElement('p');
   interactions.classList.add('grey-text','text-darken-2','right-align','flow-text')
   var intNumCont = document.createElement('span');
-  intNumCont.classList.add('b-orange-text');
+  intNumCont.classList.add('tm-green-text');
   statsCont.appendChild(interactions);
   var intTxt = document.createTextNode('Número de interacciones: ')
   interactions.appendChild(intTxt);
@@ -150,7 +127,7 @@ function bStats(month){
   var cost = document.createElement('p');
   cost.classList.add('grey-text','text-darken-2','right-align','flow-text')
   var cosNumCont = document.createElement('span');
-  cosNumCont.classList.add('b-orange-text');
+  cosNumCont.classList.add('tm-green-text');
   statsCont.appendChild(cost);
   var cosTxt = document.createTextNode('Costo por interacción: ')
   cost.appendChild(cosTxt);
@@ -161,7 +138,7 @@ function bStats(month){
   var tCost = document.createElement('p');
   tCost.classList.add('grey-text','text-darken-2','right-align','flow-text')
   var tCosNumCont = document.createElement('span');
-  tCosNumCont.classList.add('b-orange-text');
+  tCosNumCont.classList.add('tm-green-text');
   statsCont.appendChild(tCost);
   var tCosTxt = document.createTextNode('Costo total del período: ')
   tCost.appendChild(tCosTxt);
@@ -174,24 +151,24 @@ function billingFebrero(){
   var lineData = {
       labels: febLabels,
       datasets: [{
-          label: 'Msjs. Enviados',
-          data: febDataS,
+          label: 'Ofertas de fin de temporada',
+          data: febData1,
           backgroundColor: pollstrChartColors(0)[1],
           borderColor: pollstrChartColors(1)[1],
           borderWidth: 1
       },
       {
-          label: 'Respuestas',
-          data: febDataR,
-          backgroundColor: pollstrChartColors(0)[0],
-          borderColor: pollstrChartColors(1)[0],
+          label: 'Nuevo lanzamiento de producto',
+          data: febData2,
+          backgroundColor: pollstrChartColors(0)[2],
+          borderColor: pollstrChartColors(1)[2],
           borderWidth: 1
       },
       {
           label: 'Total',
           data: febTotal,
-          backgroundColor: pollstrChartColors(overlappingOpacity)[4],
-          borderColor: pollstrChartColors(1)[4],
+          backgroundColor: pollstrChartColors(overlappingOpacity)[0],
+          borderColor: pollstrChartColors(1)[0],
           borderWidth: 1
       }]
   };
@@ -210,24 +187,24 @@ function billingMarzo(){
   var lineData = {
       labels: marLabels,
       datasets: [{
-          label: 'Msjs. Enviados',
-          data: marDataS,
+          label: 'Ofertas de fin de temporada',
+          data: marData1,
           backgroundColor: pollstrChartColors(0)[1],
           borderColor: pollstrChartColors(1)[1],
           borderWidth: 1
       },
       {
-          label: 'Respuestas',
-          data: marDataR,
-          backgroundColor: pollstrChartColors(0)[0],
-          borderColor: pollstrChartColors(1)[0],
+          label: 'Nuevo lanzamiento de producto',
+          data: marData2,
+          backgroundColor: pollstrChartColors(0)[2],
+          borderColor: pollstrChartColors(1)[2],
           borderWidth: 1
       },
       {
           label: 'Total',
           data: marTotal,
-          backgroundColor: pollstrChartColors(overlappingOpacity)[4],
-          borderColor: pollstrChartColors(1)[4],
+          backgroundColor: pollstrChartColors(overlappingOpacity)[0],
+          borderColor: pollstrChartColors(1)[0],
           borderWidth: 1
       }]
   };
@@ -244,24 +221,24 @@ function billingAbril(){
   var lineData = {
       labels: aprLabels,
       datasets: [{
-          label: 'Msjs. Enviados',
-          data: aprDataS,
+          label: 'Ofertas de fin de temporada',
+          data: aprData1,
           backgroundColor: pollstrChartColors(0)[1],
           borderColor: pollstrChartColors(1)[1],
           borderWidth: 1
       },
       {
-          label: 'Respuestas',
-          data: aprDataR,
-          backgroundColor: pollstrChartColors(0)[0],
-          borderColor: pollstrChartColors(1)[0],
+          label: 'Nuevo lanzamiento de producto',
+          data: aprData2,
+          backgroundColor: pollstrChartColors(0)[2],
+          borderColor: pollstrChartColors(1)[2],
           borderWidth: 1
       },
       {
           label: 'Total',
           data: aprTotal,
-          backgroundColor: pollstrChartColors(overlappingOpacity)[4],
-          borderColor: pollstrChartColors(1)[4],
+          backgroundColor: pollstrChartColors(overlappingOpacity)[0],
+          borderColor: pollstrChartColors(1)[0],
           borderWidth: 1
       }]
   };
