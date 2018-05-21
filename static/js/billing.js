@@ -3,7 +3,7 @@ var chartType = 'line';
 var lineOptions = {
   maintainAspectRatio: true,
   legend: {
-    position: 'right'
+    position: 'top'
   },
   scales: {
     xAxes: [{
@@ -248,4 +248,30 @@ function billingAbril(){
       options: lineOptions
   });
   bStats('Abril');
+}
+
+
+function viewBilling(){
+  document.getElementById("billing-data").innerHTML = "";
+  var month = document.getElementById('months').value;
+  var container = document.getElementById('billing-data');
+  var title = document.createElement('h4');
+  var titleText = document.createTextNode('Consumo para el mes de ' + month);
+  var canvas = document.createElement('canvas');
+  canvas.id = 'consumo';
+  canvas.height = '140';
+  container.classList.add('card-panel', 'center','canvas-graph');
+  container.appendChild(title);
+  title.appendChild(titleText);
+  title.classList.add('tm-green-text');
+  container.appendChild(canvas);
+  if (month == 'Febrero'){
+    billingFebrero();
+  }
+  else if (month == 'Marzo') {
+    billingMarzo();
+  }
+  else if (month == 'Abril') {
+    billingAbril();
+  }
 }

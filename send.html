@@ -17,7 +17,7 @@
   <div class="navbar-fixed">
     <nav class="white wow slideInDown">
       <div class="nav-wrapper container">
-        <!--img src="static/img/pollstrLogoSM.png" class="brand-logo  nav-logo"-->
+        <img src="static/img/logoSynapsys.png" class="brand-logo  nav-logo">
         <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons p-blue-text">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="menu.html" class="p-green-text">Menú principal</a></li>
@@ -58,13 +58,13 @@
               </div>
               <div class="col s12 m6">
                 <p class="center">
-                  <input type="checkbox" id="gender1" class="checkbox-tm" value="mujeres"/>
+                  <input type="checkbox" id="gender1" class="checkbox-tm" value="mujeres" checked/>
                   <label for="gender1">Mujeres</label>
                 </p>
               </div>
               <div class="col s12 m6">
                 <p class="center">
-                  <input type="checkbox" id="gender2" class="checkbox-tm" value="hombres"/>
+                  <input type="checkbox" id="gender2" class="checkbox-tm" value="hombres" checked/>
                   <label for="gender2">Hombres</label>
                 </p>
               </div>
@@ -86,13 +86,13 @@
               </div>
               <div class="col s6 m3">
                 <p class="center">
-                  <input type="checkbox" id="nse2" class="checkbox-tm" value="A / A-"/>
+                  <input type="checkbox" id="nse2" class="checkbox-tm" value="A / A-" checked/>
                   <label for="nse2">A / A-</label>
                 </p>
               </div>
               <div class="col s6 m3">
                 <p class="center">
-                  <input type="checkbox" id="nse3" class="checkbox-tm" value="B+ / B / B-"/>
+                  <input type="checkbox" id="nse3" class="checkbox-tm" value="B+ / B / B-" checked/>
                   <label for="nse3">B+ / B / B-</label>
                 </p>
               </div>
@@ -103,7 +103,7 @@
                 </p>
               </div>
               <div class="col s12">
-                <p class="grey-text text-darken-2 flow-text">Escriba la lista de códigos postales objetivo separados por la tecla enter. También puede copiar y pegar una columna de excel con la lista de códigos postales.</p>
+                <p class="grey-text text-darken-2 flow-text">Escriba la lista de códigos postales objetivo separados por la tecla enter. También puede copiar y pegar una columna de excel con la lista de códigos postales. <span class="tm-green-text">En caso de dejar este campo en blanco, se enviarán mensajes a todo el territorio nacional, en cuyo caso se recomienda delimitar la campaña por presupuesto en la parte de abajo.</span></p>
               </div>
               <div class="input-field col s12 m12">
                 <i class="material-icons prefix p-green-text">location_on</i>
@@ -111,9 +111,18 @@
                 <label for="phones"></label>
               </div>
 
+              <div class="col s12">
+                <p class="grey-text text-darken-2 flow-text">Escriba su límite de presupuesto para esta campaña. <span class="tm-green-text">Este campo es opcional.</span></p>
+              </div>
+              <div class="input-field col s12 m12">
+                <i class="material-icons prefix p-green-text">attach_money</i>
+                <input id="budget" type="text"></input>
+                <label for="budget"></label>
+              </div>
+
               <div class="col s12 m12 center" style="margin-top:100px;">
                   <!--Cambiar por botón-->
-                  <a onclick="countPhones();" class="btn waves-effect waves-light p-green modal-trigger" type="submit" name="action" href="#confirm">Enviar
+                  <a onclick="countPhones();" class="btn waves-effect waves-light p-green modal-trigger" type="submit" name="action" href="#confirm">Ver presupuesto
                     <i class="material-icons right">send</i>
                   </a>
               </div>
@@ -145,7 +154,7 @@
     <div class="footer-copyright">
       <div class="container">
         <!--©2018 Pollstrio S.A.P.I. de C.V.-->
-        <a class="grey-text text-lighten-4 right modal-trigger" href="#privacy">Privacy Statement</a>
+        <!--a class="grey-text text-lighten-4 right modal-trigger" href="#privacy">Privacy Statement</a-->
       </div>
     </div>
   </footer>
@@ -164,10 +173,11 @@
 
   <!--Confirmation Modal-->
   <div id="confirm" class="modal">
-    <div class="modal-content center">
+    <div class="modal-content left-align">
       <p class="flow-text">
-        La campaña <span class="tm-green-text" id="this-survey">undefined</span> se enviará a <span class="tm-green-text" id="genders">undefined</span> de <span class="tm-green-text" id="age-lower">undefined</span> a <span class="tm-green-text" id="age-upper">undefined</span> años de edad, de niveles socioeconómicos <span class="tm-green-text" id="nses">undefined</span>, en <span class="tm-green-text" id="phone-numbers">undefined</span> códigos postales. ¿Está seguro?
+        La campaña <span class="tm-green-text" id="this-survey">undefined</span> se enviará a <span class="tm-green-text" id="genders">undefined</span> de <span class="tm-green-text" id="age-lower">undefined</span> a <span class="tm-green-text" id="age-upper">undefined</span> años de edad, de niveles socioeconómicos <span class="tm-green-text" id="nses">undefined</span>, en <span class="tm-green-text" id="phone-numbers">undefined</span> códigos postales. Se enviarán <span class="tm-green-text" id="number-of-messages">1500</span> SMS a un costo de <span class="tm-green-text">$</span><span class="tm-green-text" id="unit-cost">$15</span> pesos, dando un total de <span class="tm-green-text">$</span><span class="tm-green-text" id="total-cost">232,500</span> pesos ¿Está seguro?
       </p>
+      <p class="left, grey-text">*Precios sin I.V.A.</p>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-red btn-flat tm-green-text">Cancelar</a>

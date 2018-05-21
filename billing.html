@@ -16,7 +16,7 @@
   <div class="navbar-fixed">
     <nav class="white wow slideInDown">
       <div class="nav-wrapper container">
-        <!--img src="static/img/pollstrLogoSM.png" class="brand-logo  nav-logo"-->
+        <img src="static/img/logoSynapsys.png" class="brand-logo  nav-logo">
         <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="material-icons p-blue-text">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="menu.html" class="p-green-text">Menú principal</a></li>
@@ -80,7 +80,7 @@
     <div class="footer-copyright">
       <div class="container">
         <!--©2018 Pollstrio S.A.P.I. de C.V.-->
-        <a class="grey-text text-lighten-4 right modal-trigger" href="#privacy">Privacy Statement</a>
+        <!--a class="grey-text text-lighten-4 right modal-trigger" href="#privacy">Privacy Statement</a-->
       </div>
     </div>
   </footer>
@@ -128,32 +128,6 @@
     new WOW().init();
   </script>
 
-  <script>
-    function viewBilling(){
-      document.getElementById("billing-data").innerHTML = "";
-      var month = document.getElementById('months').value;
-      var container = document.getElementById('billing-data');
-      var title = document.createElement('h4');
-      var titleText = document.createTextNode('Consumo para el mes de ' + month);
-      var canvas = document.createElement('canvas');
-      canvas.id = 'consumo';
-      canvas.height = '75';
-      container.classList.add('card-panel', 'center');
-      container.appendChild(title);
-      title.appendChild(titleText);
-      title.classList.add('tm-green-text');
-      container.appendChild(canvas);
-      if (month == 'Febrero'){
-        billingFebrero();
-      }
-      else if (month == 'Marzo') {
-        billingMarzo();
-      }
-      else if (month == 'Abril') {
-        billingAbril();
-      }
-    }
-  </script>
 
 </body>
 
