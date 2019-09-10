@@ -15,7 +15,7 @@ h2{
 }
 
 .tabs .tab a {
-  color: #5bc500;
+  color: #ff7212;
 }
 
 li.tab.col.multiline{
@@ -24,13 +24,13 @@ li.tab.col.multiline{
 }
 
 span.caret{
-  color: #5bc500 !important;
+  color: #ff7212 !important;
 }
 
 .checkbox-tm[type="checkbox"]:checked + label:before{
     border: 2px solid transparent;
-    border-bottom: 2px solid #5bc500;
-    border-right: 2px solid #5bc500;
+    border-bottom: 2px solid #ff7212;
+    border-right: 2px solid #ff7212;
     background: transparent;
 }
 
@@ -51,16 +51,16 @@ span.caret{
 }
 
 .input-field textarea:focus + label {
-  color: #5bc500 !important;
+  color: #ff7212 !important;
 }
 
 .row .input-field textarea:focus {
-  border-bottom: 1px solid #5bc500 !important;
-  box-shadow: 0 1px 0 0 #5bc500 !important
+  border-bottom: 1px solid #ff7212 !important;
+  box-shadow: 0 1px 0 0 #ff7212 !important
 }
 
 ul.dropdown-content.select-dropdown li span {
-    color: #5bc500; /* no need for !important :) */
+    color: #ff7212; /* no need for !important :) */
 }
 
 ul.dropdown-content.select-dropdown.disabled li span {
@@ -104,10 +104,10 @@ z-index: 1;
 }
 
 .tm-green{
-  background-color: #5bc500;
+  background-color: #ff7212;
 }
 .tm-green-text{
-  color: #5bc500;
+  color: #ff7212;
 }
 
 .b-blue{
@@ -172,10 +172,10 @@ blockquote.p-quote p {
   color: #00a9df;
 }
 .p-green{
-  background-color: #5bc500;
+  background-color: #ff7212;
 }
 .p-green-text{
-  color: #5bc500;
+  color: #ff7212;
 }
 
 .q-red {
